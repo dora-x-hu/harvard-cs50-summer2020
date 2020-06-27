@@ -44,7 +44,7 @@ int main(void)
     }
 
 
-
+    int numDigits = 0;
     if(!valid)
     {
         printf("INVALID\n");
@@ -54,17 +54,18 @@ int main(void)
         while(number3>99)
         {
             number3 = number3 / 10;
+            numDigits++;
         }
 
-        if(number3 == 34 || number3 == 37)
+        if((number3 == 34 || number3 == 37) && numDigits==13)
         {
             printf("AMEX\n");
         }
-        else if(number3 >= 51 && number3 <=55)
+        else if(number3 >= 51 && number3 <=55 && numDigits==14)
         {
             printf("MASTERCARD\n");
         }
-       else  if(number3 / 10 == 4)
+       else  if(number3 / 10 == 4 && (numDigits==11 || numDigits==14))
         {
             printf("VISA\n");
         }
