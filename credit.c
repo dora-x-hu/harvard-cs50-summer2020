@@ -14,14 +14,18 @@ int main(void)
     number = number/10; // start with 2nd last digit
     while(number>0)
     {
+        // last digit * 2
         thisNum = number%10;
         thisNum = thisNum * 2;
+
+        // add sum of digits in last digit * 2 to total sum
         while(thisNum>0)
         {
             sum += (thisNum%10);
             thisNum = thisNum/10;
         }
 
+        // every other digit
         number = number/100;
     }
 
@@ -33,7 +37,7 @@ int main(void)
     }
 
     bool valid;
-
+    // checks sum ends in 0 condition
     if(sum%10 == 0)
     {
         valid = true;
@@ -51,6 +55,7 @@ int main(void)
     }
     else
     {
+        // finds number of digits
         while(number3>99)
         {
             number3 = number3 / 10;
