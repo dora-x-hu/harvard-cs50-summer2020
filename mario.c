@@ -12,15 +12,15 @@ int main(void)
     }
 
     //each i loop represents a level of the pyramid
-    for(int i=1; i<=height; i++)
+    for (int i=1; i<=height; i++)
     {
         //spaces on left
-        for(int j=0; j<height-i; j++)
+        for (int j=0; j<height-i; j++)
         {
             printf(" ");
         }
         //hashtags on left
-        for(int j=0; j<i; j++)
+        for (int j=0; j<i; j++)
         {
             printf("#");
         }
@@ -29,7 +29,7 @@ int main(void)
         printf("  ");
 
         //hashtags on right
-        for(int j=0; j<i; j++)
+        for (int j=0; j<i; j++)
         {
             printf("#");
         }
