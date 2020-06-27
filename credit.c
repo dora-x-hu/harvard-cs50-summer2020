@@ -60,13 +60,17 @@ int main(void)
         {
             printf("AMEX\n");
         }
-        if(number3 >= 51 && number3 <=55)
+        else if(number3 >= 51 && number3 <=55)
         {
             printf("MASTERCARD\n");
         }
-        if(number3 / 10 == 4)
+       else  if(number3 / 10 == 4)
         {
             printf("VISA\n");
+        }
+        else
+        {
+            printf("INVALID\n");
         }
     }
 
