@@ -15,7 +15,7 @@ int main(void)
 
     if(index<1)
     {
-        printf("Below Grade 1\n");
+        printf("Before Grade 1\n");
     }
     else if(index>16)
     {
