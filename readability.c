@@ -11,8 +11,6 @@ int main(void)
 
     int index = mygrade;
 
-    //printf("%f", mygrade);
-
     if(index<1)
     {
         printf("Before Grade 1\n");
@@ -41,7 +39,7 @@ double grade(string sample)
     int n = strlen(sample);
     while(i<n)
     {
-
+        // used to count space separations between words
         if(sample[i]==' ')
         {
             spaces++;
@@ -57,8 +55,8 @@ double grade(string sample)
         {
             sentences++;
         }
-        // word counter: is this character sin a-z? If it is, then is the next character a space?
-        if( ((sample[i]>=65 && sample[i]<=90) || (sample[i]>=97 && sample[i]<=122)) && /*(sample[i+1] == '\0' || (!(sample[i+1]>=65 && sample[i+1]<=90) && !(sample[i+1]>=97 && sample[i+1]<=122)) ) (sample[i+1]==' ' || sample[i+1]=='\0')*/  spaces==1)
+        // word counter: is this character in a-z? was there a space separation beffore it?
+        if(((sample[i]>=65 && sample[i]<=90) || (sample[i]>=97 && sample[i]<=122)) && spaces==1)
         {
             words++;
             spaces=0;
