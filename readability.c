@@ -11,7 +11,15 @@ int main(void)
 
     int index = mygrade;
 
-    if(-mygrade+index+1 < mygrade-index)
+    if(index<1)
+    {
+        printf("Below Grade 1\n");
+    }
+    else if(index>16)
+    {
+        printf("Grade 16+\n");
+    }
+    else if(-mygrade+index+1 < mygrade-index)
     {
         printf("Grade %i\n", index+1);
     }
