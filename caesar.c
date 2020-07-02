@@ -41,10 +41,10 @@ int main(int argc, string argv[])
             plaintext[i] = plaintext[i] - 26 + rotate%26;
         }
 
-        /*if((plaintext[i] > 90 && plaintext[i] < 105) || plaintext[i] > 122)
+        if((plaintext[i] > 90 && plaintext[i] < 105) || plaintext[i] > 122)
         {
             plaintext[i] = plaintext[i] - 26;
-        }*/
+        }
     }
 
     printf("ciphertext: %s\n", plaintext);
