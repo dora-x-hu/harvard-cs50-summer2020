@@ -11,6 +11,8 @@ int main(void)
 
     int index = mygrade;
 
+    //printf("%f", mygrade);
+
     if(index<1)
     {
         printf("Below Grade 1\n");
@@ -34,10 +36,17 @@ int main(void)
 double grade(string sample)
 {
     int i=0;
-    double letters=0, words=0, sentences=0;
+    double letters=0, words=1, sentences=0;
+    int spaces = 0;
     int n = strlen(sample);
     while(i<n)
     {
+
+        if(sample[i]==' ')
+        {
+            spaces++;
+        }
+
         // letter counter: is this character a-z
         if((sample[i]>=65 && sample[i]<=90) || (sample[i]>=97 && sample[i]<=122))
         {
@@ -49,9 +58,10 @@ double grade(string sample)
             sentences++;
         }
         // word counter: is this character sin a-z? If it is, then is the next character a space?
-        if( ((sample[i]>=65 && sample[i]<=90) || (sample[i]>=97 && sample[i]<=122)) && /*(sample[i+1] == '\0' || (!(sample[i+1]>=65 && sample[i+1]<=90) && !(sample[i+1]>=97 && sample[i+1]<=122)) )*/ (sample[i+1]==' ' || sample[i+1]=='\0') )
+        if( ((sample[i]>=65 && sample[i]<=90) || (sample[i]>=97 && sample[i]<=122)) && /*(sample[i+1] == '\0' || (!(sample[i+1]>=65 && sample[i+1]<=90) && !(sample[i+1]>=97 && sample[i+1]<=122)) ) (sample[i+1]==' ' || sample[i+1]=='\0')*/  spaces==1)
         {
             words++;
+            spaces=0;
         }
         i++;
     }
@@ -62,4 +72,6 @@ double grade(string sample)
     double thisGrade = 0.0588 * L - 0.296 * S - 15.8;
 
     return thisGrade;
+
+    //return sentences;
 }
