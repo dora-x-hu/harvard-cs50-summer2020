@@ -35,7 +35,7 @@ int main(int argc, string argv[])
     int len2 = strlen(plaintext);
 
     // convert original plaintext with cipher
-    for(int i=0; i<len2; i++)
+    for (int i=0; i<len2; i++)
     {
         if(plaintext[i] >= 65 && plaintext[i] <= 90)
         {
