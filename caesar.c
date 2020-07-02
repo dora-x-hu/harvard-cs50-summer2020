@@ -32,12 +32,19 @@ int main(int argc, string argv[])
     int len2 = strlen(plaintext);
     for(int i=0; i<len2; i++)
     {
-        plaintext[i] += rotate%26;
+        if((plaintext[i] >= 65 && plaintext[i] <= 90) || (plaintext[i] <= 127-rotate%26))
+        {
+            plaintext[i] += rotate%26;
+        }
+        else if(plaintext[i] >= 97 && plaintext[i]<=122)
+        {
+            plaintext[i] = plaintext[i] - 26 + rotate%26;
+        }
 
-        if((plaintext[i] > 90 && plaintext[i] < 97) || plaintext[i] > 122)
+        /*if((plaintext[i] > 90 && plaintext[i] < 105) || plaintext[i] > 122)
         {
             plaintext[i] = plaintext[i] - 26;
-        }
+        }*/
     }
 
     printf("ciphertext: %s\n", plaintext);
