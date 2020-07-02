@@ -48,8 +48,8 @@ double grade(string sample)
         {
             sentences++;
         }
-        // word counter: is this character sin a-z? If it is, then is the next character non A-Z or the end of the text?
-        if( ((sample[i]>=65 && sample[i]<=90) || (sample[i]>=97 && sample[i]<=122)) && (sample[i+1] == '\0' || (!(sample[i+1]>=65 && sample[i+1]<=90) && !(sample[i+1]>=97 && sample[i+1]<=122)) ) )
+        // word counter: is this character sin a-z? If it is, then is the next character a space?
+        if( ((sample[i]>=65 && sample[i]<=90) || (sample[i]>=97 && sample[i]<=122)) && /*(sample[i+1] == '\0' || (!(sample[i+1]>=65 && sample[i+1]<=90) && !(sample[i+1]>=97 && sample[i+1]<=122)) )*/ (sample[i+1]==' ' || sample[i+1]=='\0') )
         {
             words++;
         }
