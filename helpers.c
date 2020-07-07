@@ -2,10 +2,13 @@
 
 int roundToInt(double roundee)
 {
+    // caps value at 255
     if(roundee>255)
     {
         return 255;
     }
+
+    // determiens whether argument is closer to upper or lower bound
     int lesser = (int)roundee;
     if((double)(lesser+1-roundee) > (double)(roundee-lesser))
     {
@@ -25,6 +28,7 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
     {
         for(int j = 0; j < width; j++)
         {
+            // finds average
             grayVal = roundToInt((double)(image[i][j].rgbtBlue + image[i][j].rgbtRed + image[i][j].rgbtGreen) / 3);
             image[i][j].rgbtBlue = grayVal;
             image[i][j].rgbtRed = grayVal;
@@ -47,6 +51,7 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
             orGreen = image[i][j].rgbtGreen;
             orBlue = image[i][j].rgbtBlue;
 
+            // formulas for sepia
             image[i][j].rgbtBlue = roundToInt(.272 * orRed + .534 * orGreen + .131 * orBlue);
             image[i][j].rgbtRed = roundToInt(.393 * orRed + .769 * orGreen + .189 * orBlue);
             image[i][j].rgbtGreen = roundToInt(.349 * orRed + .686 * orGreen + .168 * orBlue);
@@ -62,6 +67,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 
     for(int i = 0; i < height; i++)
     {
+        // does a swap with a temp variable up to the middle point; otherwise values swap twice
         for(int j = 0; j < width/2; j++)
         {
             leftRed = image[i][j].rgbtRed;
