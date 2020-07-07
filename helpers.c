@@ -168,9 +168,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 }
             }
 
-            copyRed[i][j] = sumRed/divide;
-            copyGreen[i][j] = sumGreen/divide;
-            copyBlue[i][j] = sumBlue/divide;
+            copyRed[i][j] = (double)sumRed/divide;
+            copyGreen[i][j] = (double)sumGreen/divide;
+            copyBlue[i][j] = (double)sumBlue/divide;
         }
     }
 
