@@ -2,6 +2,10 @@
 
 int roundToInt(double roundee)
 {
+    if(roundee>255)
+    {
+        return 255;
+    }
     int lesser = (int)roundee;
     if((double)(lesser+1-roundee) > (double)(roundee-lesser))
     {
