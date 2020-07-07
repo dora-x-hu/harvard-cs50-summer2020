@@ -80,7 +80,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
     RGBTRIPLE copy[height][width];
-    BYTE sumRed, sumGreen, sumBlue, divide;
+    int sumRed, sumGreen, sumBlue, divide;
 
     for(int i = 0; i < height; i++)
     {
