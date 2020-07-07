@@ -1,5 +1,18 @@
 #include "helpers.h"
 
+int roundToInt(double roundee)
+{
+    int lesser = (int)roundee;
+    if((double)(lesser+1-roundee) > (double)(roundee-lesser))
+    {
+        return lesser;
+    }
+    else
+    {
+        return lesser+1;
+    }
+}
+
 // Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
 {
@@ -8,7 +21,7 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
     {
         for(int j = 0; j < width; j++)
         {
-            grayVal = (image[i][j].rgbtBlue + image[i][j].rgbtRed + image[i][j].rgbtGreen) / 3;
+            grayVal = roundToInt(image[i][j].rgbtBlue + image[i][j].rgbtRed + image[i][j].rgbtGreen) / 3;
             image[i][j].rgbtBlue = grayVal;
             image[i][j].rgbtRed = grayVal;
             image[i][j].rgbtGreen = grayVal;
@@ -29,9 +42,9 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
             orGreen = image[i][j].rgbtGreen;
             orBlue = image[i][j].rgbtBlue;
 
-            image[i][j].rgbtBlue = .272 * orRed + .534 * orGreen + .131 * orBlue;
-            image[i][j].rgbtRed = .393 * orRed + .769 * orGreen + .189 * orBlue;
-            image[i][j].rgbtGreen = .349 * orRed + .686 * orGreen + .168 * orBlue;
+            image[i][j].rgbtBlue = roundToInt(.272 * orRed + .534 * orGreen + .131 * orBlue);
+            image[i][j].rgbtRed = roundToInt(.393 * orRed + .769 * orGreen + .189 * orBlue);
+            image[i][j].rgbtGreen = roundToInt(.349 * orRed + .686 * orGreen + .168 * orBlue);
         }
     }
     return;
@@ -150,9 +163,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 }
             }
 
-            copy[i][j].rgbtRed = sumRed/divide;
-            copy[i][j].rgbtGreen = sumGreen/divide;
-            copy[i][j].rgbtBlue = sumBlue/divide;
+            copy[i][j].rgbtRed = roundToInt(sumRed/divide);
+            copy[i][j].rgbtGreen = roundToInt(sumGreen/divide);
+            copy[i][j].rgbtBlue = roundToInt(sumBlue/divide);
         }
     }
 
