@@ -65,7 +65,7 @@ int main(int argc, char *argv[])
 
         if(start)
             {
-                fwrite(filename, 1, 512, img);
+                fwrite(buffer, 1, 512, img);
             }
 
     }
