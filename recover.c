@@ -64,9 +64,9 @@ int main(int argc, char *argv[])
         // not the start of a jpeg
 
         if(start)
-            {
-                fwrite(buffer, 1, 512, img);
-            }
+        {
+            fwrite(buffer, 1, 512, img);
+        }
 
     }
 
