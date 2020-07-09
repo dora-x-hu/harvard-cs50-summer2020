@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
     //FILE *file_output = fopen("p_0000.jpg", "w");
 
     unsigned char buffer[512];
-    char filename[7];
+    char filename[8];
     //int numPics;
 
 
@@ -72,17 +72,5 @@ int main(int argc, char *argv[])
 
     fclose(img);
     fclose(file);
-
-
-/*
-    for(int)
-
-
-    unsigned char bytes[3];
-    fread(bytes, 3, 1, file);
-    char filename[7];*/
-
-
-
 
 }
