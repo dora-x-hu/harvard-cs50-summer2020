@@ -38,6 +38,7 @@ bool check(const char *word)
         printf("%s vs %s\n", cursor->word, word);
         if(same)
         {
+            printf("FITS\n");
             return true;
         }
         cursor = cursor->next;
