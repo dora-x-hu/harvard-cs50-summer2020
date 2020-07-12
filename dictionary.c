@@ -35,15 +35,15 @@ bool check(const char *word)
     while(cursor != NULL)
     {
         same = strcasecmp(word, cursor->word);
-        printf("%s vs %s\n", cursor->word, word);
+        //printf("%s vs %s\n", cursor->word, word);
         if(same==0)
         {
-            printf("FITS\n");
+            //printf("FITS\n");
             return true;
         }
         cursor = cursor->next;
     }
-    printf("%i\n", index);
+    //printf("%i\n", index);
     return false;
 }
 
