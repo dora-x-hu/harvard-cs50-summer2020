@@ -35,7 +35,7 @@ bool check(const char *word)
     while(cursor != NULL)
     {
         same = strcasecmp(word, cursor->word);
-        printf("%s\n", cursor->word);
+        printf("%s vs %s\n", cursor->word, word);
         if(same)
         {
             return true;
