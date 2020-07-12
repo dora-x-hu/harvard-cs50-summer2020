@@ -35,15 +35,14 @@ bool check(const char *word)
     while(cursor != NULL)
     {
         same = strcasecmp(word, cursor->word);
-        //printf("%s vs %s\n", cursor->word, word);
+
         if(same==0)
         {
-            //printf("FITS\n");
             return true;
         }
         cursor = cursor->next;
     }
-    //printf("%i\n", index);
+
     return false;
 }
 
@@ -88,7 +87,7 @@ bool load(const char *dictionary)
 
         // allocate memory for a new node
         insert = malloc(sizeof(node));
-        //printf("%s\n", insert->word);
+
         if(insert == NULL)
         {
             return false;
