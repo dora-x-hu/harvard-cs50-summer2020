@@ -53,7 +53,12 @@ unsigned int hash(const char *word)
     // get the first character in the word
     char first = *word;
 
-    return (first - 97);
+    int ascii = first;
+    if(ascii > 97)
+    {
+        return (ascii - 97);
+    }
+    return ascii - 65;
 }
 
 // Loads dictionary into memory, returning true if successful else false
