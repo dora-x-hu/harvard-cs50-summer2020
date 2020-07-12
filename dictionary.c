@@ -41,6 +41,7 @@ bool check(const char *word)
         }
         cursor = cursor->next;
     }
+    printf("%i\n", index);
     return false;
 }
 
