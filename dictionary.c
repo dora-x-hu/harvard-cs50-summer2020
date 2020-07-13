@@ -54,7 +54,7 @@ unsigned int hash(const char *word)
     char first = *word;
 
     int ascii = first;
-    if(ascii > 97)
+    if(ascii >= 97)
     {
         return (ascii - 97);
     }
