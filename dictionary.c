@@ -25,6 +25,7 @@ node *table[N];
 
 bool started[N];
 int numWords;
+FILE *dicFile;
 
 // Returns true if word is in dictionary else false
 bool check(const char *word)
@@ -67,7 +68,7 @@ bool load(const char *dictionary)
     numWords = 0;
 
     // open dictionary file
-    FILE *dicFile;
+
     dicFile = fopen(dictionary, "r");
     if(dicFile == NULL)
     {
@@ -139,6 +140,8 @@ bool unload(void)
             temp = cursor;
         }
     }
+
+    fclose(dicFile);
 
     return true;
 }
