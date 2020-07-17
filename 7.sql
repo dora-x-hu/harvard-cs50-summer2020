@@ -12,7 +12,7 @@ ORDER BY LOWER(title);
 
 
 SELECT title, rating
-FROM moviess
+FROM movies
 JOIN ratings
 ON movies.id = ratings.movie_id
 AND movies.year = 2010
