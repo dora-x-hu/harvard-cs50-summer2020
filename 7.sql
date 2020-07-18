@@ -1,19 +1,10 @@
 /* two columns: title, rating
 include: all movies released in 2010
 order: descending by rating; secondary: by title */
-/*SELECT title FROM movies WHERE year = 2010
+
+SELECT title, rating    /* output title and rating */
+FROM movies             /* we need info from movies and ratings */
 JOIN ratings
-ON
-
-rating FROM ratings WHERE movie_id = (id FROM movies WHERE year = 2010)
-ORDER BY LOWER(title);
-*/
-
-
-
-SELECT title, rating
-FROM movies
-JOIN ratings
-ON movies.id = ratings.movie_id
-AND movies.year = 2010
-ORDER BY ratings.rating DESC, LOWER(movies.title)
+ON movies.id = ratings.movie_id  /* their commonality is the id of the movie */
+AND movies.year = 2010           /* which was released in 2010 */
+ORDER BY ratings.rating DESC, LOWER(movies.title)  /* descending order by rating, additionally by title */
