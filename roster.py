@@ -21,15 +21,14 @@ else:
     thisList = db.execute("SELECT * FROM students WHERE house = 'Slytherin' ORDER BY last, first")
 
 
-
+# goes through every row, which represents a student
 for row in thisList:
+
+    # if no middle name
     if(row["middle"] == None):
         print(f"{row['first']} {row['last']}, born {row['birth']}")
         continue
+
+    # yes middle name
     print(f"{row['first']} {row['middle']} {row['last']}, born {row['birth']}")
 
-# SQL query
-# SELECT first, middle, last
-# FROM students
-# WHERE house = sys.argv[1]
-# ORDER BY last, first
