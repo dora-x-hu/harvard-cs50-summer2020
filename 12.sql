@@ -4,7 +4,13 @@ include: movies that have Johnny Depp and Helena Bonham Carter listed as stars
 
 SELECT title
 FROM movies
-JOIN stars
-ON movies.id = stars.movie_id;
-JOIN people
-ON stars.person_id = (id FROM people where)
+WHERE id IN
+    (SELECT movie_id FROM stars
+    WHERE person_id IN
+        (SELECT id FROM people
+        WHERE name = "Johnny Depp"))
+AND id IN
+    (SELECT movie_id FROM stars
+    WHERE person_id IN
+        (SELECT id FROM people
+        WHERE name = "Helena Bonham Carter"));
