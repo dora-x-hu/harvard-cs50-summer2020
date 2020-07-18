@@ -1,11 +1,8 @@
 /* single column, single row
 includes: average rating of all movies released in 2012 */
-/*SELECT (SUM(rating*votes)/SUM(votes)) FROM ratings
-WHERE movie_id = (SELECT id FROM movies WHERE year = 2012);
-*/
 
-SELECT AVG(rating)
+SELECT AVG(rating)  /* gets average rating */
 FROM ratings
-JOIN movies
-ON ratings.movie_id = movies.id
-AND movies.year = 2012;
+JOIN movies         /* uses info from movies table */
+ON ratings.movie_id = movies.id   /* this movie has a rating */
+AND movies.year = 2012;           /* and was released in 2012 */
