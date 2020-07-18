@@ -2,7 +2,7 @@
 include: directors of movies with rating >= 9.0
 */
 
-SELECT COUNT(name)
+SELECT name
 FROM people
 JOIN directors
 ON people.id = directors.person_id
