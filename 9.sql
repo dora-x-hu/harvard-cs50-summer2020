@@ -5,7 +5,7 @@ order: birth year
 
 SELECT name
 FROM people
-JOIN stars     /* info from the stars table */
-ON people.id = stars.person_id    /* this person appears in the stars table */
-AND stars.movie_id = (id FROM movies WHERE year = 2004)   /* the movie they star in came out in 2004 */
-ORDER BY people.birth;    /* order by the person's birth date */
+WHERE id IN (SELECT person_id FROM stars
+    WHERE movie_id IN (SELECT id FROM movies
+        WHERE year = 2004))
+ORDER BY birth;
