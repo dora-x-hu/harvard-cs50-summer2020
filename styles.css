@@ -1,0 +1,41 @@
+.external {
+    font-style: italic;
+    color: blue;
+}
+
+a.external:visited {
+    color: purple;
+}
+
+table, tr, td {
+    border: 1px solid gray;
+    border-collapse: collapse;
+}
+
+td {
+    padding: 10px;
+}
+
+body {
+    margin: 30px;
+}
+
+div {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.example {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+}
+
+.name {
+    text-align: center;
+}
+
+#perftitle {
+    margin: -10px;
+}
