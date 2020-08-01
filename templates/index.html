@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <table class = "table table-striped">
+            <thead>
+                <tr>
+                    <th>Symbol</th>
+                    <th>Name</th>
+                    <th>Shares</th>
+                    <th>Price</th>
+                    <th>TOTAL</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for amount in shares %}
+                    <tr>
+                        <td>{{amount[0][0]["company"]}}</td>
+                        <td>{{amount[1]["name"]}}</td>
+                        <td>{{amount[2][0]["SUM(shares)"] - amount[3][0]["SUM(shares)"]}}</td>
+                        <td>{{amount[4]["price"]}}</td>
+                        <td>{{amount[5]["total"]}}</td>
+                    </tr>
+                {% endfor %}
+                <tr>
+                    <td>CASH</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>{{cash}}</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><b>{{grandtotal}}</b></td>
+                </tr>
+            </tfoot>
+    </table>
+{% endblock %}
