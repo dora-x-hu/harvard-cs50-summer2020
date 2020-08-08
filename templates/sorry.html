@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Apology
+{% endblock %}
+
+{% block main %}
+    <div>
+        <p class="confirmation">
+            Please provide a {{query}}.
+        </p>
+    </div>
+
+    <div>
+        <form action="/{{method}}" method="get">
+            <button class="btn btn-primary" type="submit">Return to {{method}} page</button>
+        </form>
+    </div>
+{% endblock %}
