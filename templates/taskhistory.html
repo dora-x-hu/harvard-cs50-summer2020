@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <table class = "table table-striped">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Tag</th>
+                    <th>Task Description</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for task in tasks %}
+                    <tr>
+                        <td class="{{task["tag"]}}">{{task["date"]}}</td>
+                        <td class="{{task["tag"]}}">{{task["start"]}} <br>to<br> {{task["end"]}}</td>
+                        <td class="{{task["tag"]}}">{{task["tag"]}}</td>
+                        <td class="{{task["tag"]}}">{{task["description"]}}</td>
+                        <td class="{{task["tag"]}}">
+                            <form action="/confirmretrieve" method="post">
+                                <input hidden name="thistask" value={{task["task_id"]}} type="number">
+                                <button class="btn btn-primary" type="submit">Retrieve</button>
+                            </form>
+                        </td>
+
+                        <!-- <td>{{task}}</td> -->
+                    </tr>
+                {% endfor %}
+            </tbody>
+            <tfoot>
+
+            </tfoot>
+    </table>
+{% endblock %}

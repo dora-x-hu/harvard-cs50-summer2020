@@ -1,0 +1,87 @@
+nav .navbar-brand
+{
+    /* size for brand */
+    font-size: xx-large;
+}
+
+/* colors for brand */
+nav .navbar-brand .blue
+{
+    color: #537fbe;
+}
+nav .navbar-brand .red
+{
+    color: #ea433b;
+}
+nav .navbar-brand .yellow
+{
+    color: #f5b82e;
+}
+nav .navbar-brand .green
+{
+    color: #2e944b;
+}
+
+main .form-control
+{
+    /* center form controls */
+    display: inline-block;
+
+    /* override Bootstrap's 100% width for form controls */
+    width: auto;
+}
+
+main
+{
+    /* scroll horizontally as needed */
+    overflow-x: auto;
+
+    /* center contents */
+    text-align: center;
+}
+
+main img
+{
+    /* constrain images on small screens */
+    max-width: 100%;
+}
+
+
+.confirmation {
+    font-size: 40px;
+    text-align:center;
+    padding: 30px;
+}
+
+.confirmsubmit {
+    display: inline-block;
+    padding: 5px;
+}
+
+.Work {
+    background-color: #ffe6e6;
+}
+
+.Study {
+    background-color: #f2e6ff;
+}
+
+.Social {
+    background-color: #fff0b3;
+}
+
+.Rest {
+    background-color: #ccffcc;
+}
+
+.Entertainment {
+    background-color: #e6f9ff;
+}
+
+.None {
+    background-color: #f2f2f2;
+}
+
+.Chores {
+    background-color: #ffffcc;
+}

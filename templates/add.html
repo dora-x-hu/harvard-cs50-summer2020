@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add Task
+{% endblock %}
+
+{% block main %}
+    <form action="/add" method="post">
+
+<!-- date for task -->
+        <div class="form-group">
+            <label for="date">Date:   </label>
+            <br>
+            <input autocomplete="off" autofocus class="form-control" name="date" type="date" required>
+        </div>
+
+<!-- time for start of task -->
+        <div class="form-group">
+            <label for="startTime">Start Time:   </label>
+            <br>
+            <input autocomplete="off" autofocus class="form-control" name="startTime" type="time" required>
+        </div>
+
+
+<!-- time for start of task -->
+        <div class="form-group">
+            <label for="endTime">End Time:   </label>
+            <br>
+            <input autocomplete="off" autofocus class="form-control" name="endTime" type="time" required>
+        </div>
+
+
+
+<!-- dropdown menu with all possible tags -->
+        <div class="dropdown">
+            <select class="form-control" name="tag" id="tag">
+                <option disabled selected value>Tag</option>
+                {% for tag in tags %}
+                    <option value={{tag}}>{{tag}}</option>
+                {% endfor %}
+            </select>
+        </div>
+<br>
+
+<!-- text box for description of task -->
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="description" placeholder="Description" type="text" required>
+        </div>
+
+<!-- submit button -->
+
+        <button class="btn btn-primary" type="submit">Create Task</button>
+
+    </form>
+{% endblock %}
